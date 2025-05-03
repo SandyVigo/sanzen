@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanzen</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="top"></div>
+  <header class="main_header">
+    <div class="header_wrapper">
+      <h1 class="site_title">
+        <a href="#top" class="title_link">Sanzen</a>
+      </h1>
+      <nav> 
+        <ul class="nav_list">
+          <li><a href="#about" class="nav_link active">ABOUT</a></li>
+          <li><a href="#meditation" class="nav_link">MEDITATION</a></li>
+          <li><a href="#nutrition" class="nav_link">NUTRITION</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+      <!-- Welcome Section with Video -->
+    <section class="welcome_section">
+      <video autoplay muted loop class="welcome_video">
+        <source src="videos/your-welcome-video.mp4.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video_overlay_text">
+        <h2>Welcome to Sanzen</h2>
+        <p>Experience Healing Through Meditation, Yoga & Nature</p>
+      </div>
+    </section>
+
+    <!-- ABOUT Section -->
+    <section id="about" class="content_section">
+      <div class="text_left">
+        <h2>About</h2>
+        <p>I guide individuals through healing journeys with personalized yoga and meditation practices. Let’s cultivate peace and presence together.</p>
+      </div>
+      <div class="image_right" style="background-image: url('images/about-image.jpg');"></div>
+    </section>
+
+    <!-- MEDITATION Section -->
+    <section id="meditation" class="content_section">
+      <div class="image_left" style="background-image: url('images/meditation-image.jpg');"></div>
+      <div class="text_right">
+        <h2>Meditation</h2>
+        <p>Explore mindfulness, silence, and focus with tailored 1:1 sessions rooted in ancient wisdom and modern practice.</p>
+      </div>
+    </section>
+
+    <!-- NUTRITION Section -->
+    <section id="nutrition" class="content_section">
+      <div class="text_left">
+        <h2>Nutrition</h2>
+        <p>Discover healing foods, herbal remedies, and plant wisdom through a blend of modern nutrition and traditional healing knowledge.</p>
+      </div>
+      <div class="image_right" style="background-image: url('images/nutrition-image.jpg');"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Healing Practice</p>
+  </footer>
+
+<button id="scrollToTopBtn" title="Back to top">↑</button>
+<button id="scrollToTopBtn" title="Go to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

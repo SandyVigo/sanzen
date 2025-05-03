@@ -1,0 +1,188 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Header */
+  .main_header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .main_header.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .site_title {
+    color: #2c6e49;
+  }
+
+  .title_link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .title_link:hover {
+    text-decoration: none;
+  }
+  
+
+  .nav_list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  .nav_link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2c6e49;
+    transition: color 0.3s;
+  }
+  .nav_link:hover {
+    color: #145a32;
+  }
+  .nav_list li a:hover {
+    background-color: transparent; /* or keep white if preferred */
+    color: #b6cdc6; /* a lighter green or gray-green */
+  }
+  .nav_list li a {
+    transition: color 0.3s ease;
+  }
+  
+  
+  /* Welcome Video Section */
+  .welcome_section {
+    position: relative;
+    height: 100vh; /* video section, treat it separately*/
+    overflow: hidden;
+  }
+  .welcome_video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video_overlay_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Alternating Content Sections */
+  .content_section {
+    display: flex;
+    flex-wrap: wrap;
+    scroll-margin-top: 80px; /* Offset for sticky header *//* del Adjust vertical spacing padding: 6rem 2rem*/
+    min-height: 100vh;       /* Optional: Make each section fill viewport - 70*/
+
+  }
+  .text_left, .text_right {
+    flex: 1;
+    padding: 3rem;
+    background-color: #ffffff;
+  }
+  .image_right, .image_left {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+  }
+  
+  /* Reversing layout */
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #2c6e49;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #145a32;
+  }
+
+.btn {
+  padding: 0.75rem 1.5rem; /*display: inline-block;*/
+  background-color: #2c6e49;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.btn:hover {
+  background-color: #145a32;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* A stronger shadow on hover */
+}
+
+/* Animation base state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Animation visible state */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #eaf6ea;
+    color: #2c6e49;
+  }
+  
+  
