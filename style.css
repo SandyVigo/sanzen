@@ -1,0 +1,674 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    /*background-color: #F4F4F4;*/
+    margin: 0;
+    padding: 0;
+    /*use subtle textures (light clouds, leaves, or stone) as backgrounds to evoke nature without overwhelming the page.*/
+    background-image: url('path/to/your/natural-texture.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #6C9E8A; /* Soft sage green for headers */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  
+  /* Header */
+  .main_header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .main_header.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*max-width: 1200px;*/
+    width: 100%;
+    padding: 0 2rem;
+    margin: auto;
+  }
+  .site_title {
+    color: #2c6e49;
+  }
+
+  .title_link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .title_link:hover {
+    text-decoration: none;
+  }
+  
+
+  /*Navigation*/
+  nav {
+    background-color: none;
+    padding: 20px;
+  }
+  .nav_list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center; /* Center the nav */
+    padding: 0;
+    margin: 0;
+  }
+    .nav_link {
+    /*font-family: 'Playfair Display', serif;*/
+    text-decoration: none;
+    font-weight: bold;
+    color: #2c6e49; /* Natural dark green */
+    transition: color 0.3s;
+  }
+    .nav_link:hover {
+    color: #6C9E8A; /* Softer sage green on hover */
+  }
+  
+  .nav_list li a:hover {
+    background-color: transparent; /* or keep white if preferred */
+    color: #b6cdc6; /* a lighter green or gray-green */
+  }
+  .nav_list li a {
+    transition: color 0.3s ease;
+  }
+  
+  /*Section*/
+  .section {
+    padding: 80px 20px;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  /* Welcome Video Section */
+  .welcome_section {
+    position: relative;
+    height: 100vh; /* video section, treat it separately*/
+    overflow: hidden;
+    border-bottom: 0px solid #e5f3eb;
+  }
+  .welcome_section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(44, 110, 73, 0.3); /* soft green tint */
+    z-index: 1;
+  }
+  
+  .video_overlay_text {
+    z-index: 2;
+  }
+
+  .welcome_video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .video_overlay_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  }
+  .video_overlay_text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    color: #ffffff; /* Use white or soft beige for clarity */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Enhance readability */
+  }
+  
+  .video_overlay_text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    color: #e6f2ea; /* Gentle, nature-inspired off-white */
+  }
+
+  /* VISION Section*/
+  .vision-section {
+    background-color: #ffffff; /* Light, warm background */
+    padding: 3rem 1rem;
+    text-align: center;
+    min-height: 60vh; /* Makes it span full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*width: 100%;*/
+  }
+
+  @media (min-width: 992px) {
+    .vision-section {
+      padding: 8rem 1rem; /* More vertical spacing on desktops */
+    }
+  }
+
+  .vision-section .text_center {
+    max-width: 1300px; /*max-width: 800px;*/
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  /*.text_center {
+    flex: 1;
+    padding: 3rem 2rem;
+    text-align: center;
+  }*/
+  
+  .vision-section h4 {
+    font-family: 'Playfair Display', serif; /* 'Montserrat', sans-serif; Stronger, more modern look */
+    font-size: 2.8rem;                     /* Slightly larger */
+    font-weight: 700;                      /* Bolder */
+    color: #1a3d2f;                        /* Darker green for strength */
+    text-transform: uppercase;            /* Optional: makes it more powerful */
+    letter-spacing: 1px;                  /* Subtle spacing for emphasis */
+    margin: 2rem auto;
+    text-align: center; /*max-width: 900px;*/
+    width: 100%;
+  }
+  
+  .vision-section h5 {
+    font-family: 'Montserrat', sans-serif; /* Matches the modern strength of vision title */
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    color:#4a675a; /* Matches the darker green used in h4 */
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    letter-spacing: 0.3px;
+  }
+
+  /* ABOUT Section*/
+
+  
+  /* Content Sections Alternating Smooth Scroll*/
+  .content_section {
+    padding: 0;                          /* Keep clean edge-to-edge on smaller screens */
+    margin: 80px auto;                   /* Top/bottom margin between sections */
+    width: 100%; /*max-width: 1200px;                   /* Prevent content from stretching too wide */
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    scroll-margin-top: 80px;
+    min-height: 100vh;
+    align-items: stretch;
+    gap: 3rem;                           /* Add breathing room between image and text */
+  }
+  
+  /* Specific Section Backgrounds */
+  /* ABOUT Section (white) */
+  #about.content_section {
+    background-color: #ffffff;
+    width: 100%;
+  }
+  
+  /* MEDITATION Section (light grey) */
+  #meditation.content_section {
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+  
+  /* NUTRITION Section (white) */
+  #nutrition.content_section {
+    background-color: #ffffff;
+    width: 100%;
+  }
+  
+
+  .text_left {
+    flex: 1;
+    padding: 3.5rem 3rem; /* Slightly increased padding for spacious layout */
+    background-color: #fdfaf6; /* Light beige calm and consistent. You can later reintroduce your radial glitter pattern if you want a textured feel.*/ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);*/
+    background-size: 40px 40px;
+    /*border-radius: 12px;*/
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 16px 0 0 16px; /* optional: soft rounding on one side */
+    animation: fadeIn 1.2s ease-out both;
+  }
+  
+  .text_right {
+    flex: 1;
+    padding: 3.5rem 3rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 0 16px 16px 0;
+    animation: fadeIn 1.2s ease-out both;
+  }
+
+  /* TYPOGRAPHY */
+  .text_left h2, .text_right h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #2c6e49; /* Deep green for harmony */
+    margin-bottom: 1rem;
+  }
+  
+  .text_left p, .text_right p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #333333;
+  }
+  
+  /* IMAGE BLOCKS */
+  .image_right, .image_left {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* This makes sure the image fills vertically for large screens */
+    border-radius: 16px;
+  }
+  
+  /* EVERSE LAYOUT */
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Offerings Buttons*/
+
+  .offerings-container {
+    margin-top: 2rem;
+  }
+  
+  #offeringsOptions ol {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  #offeringsOptions .btn {
+    margin-top: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Modal Popup */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+  }
+
+  .modal-content form input,
+  .modal-content form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .modal-content form button {
+    margin-top: 1rem;
+  }
+
+  .modal-content form label {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  /* Form for 1:1*/
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  form input,
+  form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+
+  /* Styled Modal - New Code */
+  .styled-modal {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #fff;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .styled-modal h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+  
+  .form-description {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .styled-modal form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  
+  .styled-modal form input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .btn-primary {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    background-color: #1f7a8c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #155d6c;
+  }
+  
+  .success-message {
+    display: none;
+    color: green;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) { /*600*/
+  .text_left, .text_right {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+}
+
+  .success-message {
+    display: none;
+    color: green;
+  }
+
+  
+
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #2c6e49;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #145a32;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem; /*display: inline-block;*/
+    background-color: #2c6e49;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+
+  .btn:hover {
+    background-color: #145a32;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* A stronger shadow on hover */
+  }
+
+  /* Animation base state */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  /* Animation visible state */
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /*Shop*/
+  .shop-section {
+      padding: 80px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+  
+  .shop-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .shop-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .shop-button {
+    padding: 12px 24px;
+    background-color: #6C9E8A; /* Soft sage green */
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .shop-button:hover {
+    background-color: #A3C8E0; /* Soft blue */
+    transform: scale(1.05);
+  }
+
+  .shop-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #444;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .shop-button:hover {
+    background-color: #666;
+    transform: scale(1.05);
+  }
+
+  /* FADE-IN ANIMATION */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* MOBILE RESPONSIVENESS */
+  @media (max-width: 768px) {
+    .content_section {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center; /* Center text */
+      padding: 0 1rem;
+      gap: 1.5rem;
+    }
+  
+    .text_left, .text_right {
+      max-width: 100%; /* Ensure text sections take up full width */
+      padding: 2rem 1rem; /* Reduce padding on smaller screens */
+      text-align: center; /*???*/
+    }
+  
+    .image_right, .image_left {
+      min-height: 250px; /* Adjust image height for mobile */
+      height: auto; /* Keep images proportional */
+      background-size: cover;
+    }
+  }
+
+    @media (min-width: 1200px) {
+    .content_section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center; /* Centers content within the section */
+      gap: 6rem;
+      padding: 4rem 6rem;
+      height: 100vh;
+    }
+
+    .text_left, .text_right {
+      flex: 0 0 50%;
+      padding: 2rem 2rem;
+      text-align: left;
+      height: 90%; /* Ensure text section takes the full height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Vertically center the text */
+    }
+
+    .image_left, .image_right {
+      flex: 0 0 35%;
+      min-height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .image_right {
+      transform: translateX(-5%); /* Pull image slightly toward center */
+    }
+
+    .image_left {
+      transform: translateX(5%); /* Pull image slightly toward center */
+    }
+
+  }
+
+  
+  
+  
+  
+  
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #eaf6ea;
+    color: #2c6e49;
+  }
+  
+  
