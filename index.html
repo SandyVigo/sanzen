@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,3 +213,201 @@
 </body>
 </html>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanzen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div id="top"></div>
+  <header class="main_header">
+    <div class="header_wrapper">
+      <h1 class="site_title">
+        <a href="#top" class="title_link">Sanzen</a>
+      </h1>
+      <nav> 
+        <ul class="nav_list">
+          <li><a href="#about" class="nav_link active">ABOUT</a></li>
+          <li><a href="#meditation" class="nav_link">MEDITATION</a></li>
+          <li><a href="#nutrition" class="nav_link">NUTRITION</a></li>
+          <li><a href="#shop" class="nav_link">SHOP</a></li> <!-- NEW SHOP LINK -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Welcome Section with Video -->
+    <section class="welcome_section">
+      <video autoplay muted loop class="welcome_video">
+        <source src="videos/your-welcome-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video_overlay_text">
+        <h2>Welcome to Sanzen</h2>
+        <p>experience healing through meditation & nature</p>
+      </div>
+    </section>
+    
+    <!-- VISION Section -->
+    <section id="vision" class="section vision-section">
+      <div class="text_center fade-in">
+      <!--div class="container"-->
+        <!--<h2>My Vision</h2>-->
+        <h4>I believe we can heal from within, and rooted in nature, find inner peace.</h4>
+        <h5>Through meditation and natural therapies<!-- and conscious nourishment-->, I guide you toward harmony and well-being.</h5>
+      </div>
+    </section>
+    
+
+    <!-- ABOUT Section -->
+    <section id="about" class="content_section">
+      <div class="text_left fade-in">
+        <h2>About</h2>
+        <p>I guide individuals through healing journeys with personalized meditation practices. Let’s cultivate peace and presence together.</p>
+      </div>
+      <div class="image_right" style="background-image: url('images/about-image.jpg');"></div>
+    </section>
+
+    <!-- MEDITATION Section -->
+    <section id="meditation" class="content_section">
+      <div class="image_left" style="background-image: url('images/meditation-image.jpg');"></div>
+      <div class="text_right fade-in">
+        <h2>Meditation</h2>
+        <p>Explore mindfulness, silence, and focus with tailored 1:1 sessions rooted in ancient wisdom and modern practice.</p>
+        <!-- OFFERINGS Section -->
+        <section id="offerings" class="content_section">
+          <div class="text_left fade-in">
+            <h2>Offerings</h2>
+            <p>Select your personalized meditation:</p>
+            <div class="offerings-container">
+              <button id="offeringsBtn" class="btn">View</button>
+              <div id="offeringsOptions" style="display: none; margin-top: 1rem;">
+                <ol><button class="btn" id="bookOneOnOneBtn">Book 1:1</button></ol>
+                <ol><button class="btn" id="bookCircleEventBtn">Join Circle Event</button></ol>
+                <ol><button class="btn" id="bookCorporateGroupBtn">Request for Corporate Group</button></ol>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 1:1 Booking Modal -->
+    <div id="modalOneOnOne" class="modal">
+      <div class="modal-content styled-modal">
+        <span class="close" data-close="modalOneOnOne">&times;</span>
+        <h2>Book 1:1</h2>
+        <p class="form-description">Please email or fill out the form to book your 1:1 session.</p>
+        <!--1:1 Form-->
+        <form id="oneOnOneForm" action="https://formspree.io/f/xeogabak" method="POST">
+          <!-- First name & surname side-by-side -->
+          <div style="display: flex; gap: 10px;">
+            <label style="flex: 1;">
+              First Name:
+              <input type="text" name="first-name" required>
+            </label>
+            <label style="flex: 1;">
+              Surname:
+              <input type="text" name="surname" required>
+            </label>
+          </div><br>
+          <!-- Birthday -->
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday" required><br>
+          <!-- Email -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br>
+          <!-- Date picker -->
+          <label for="date">Preferred Date:</label>
+          <input type="date" id="date" name="date" required min="2025-05-05"><br>
+          <!-- Time slot selection -->
+          <label for="time">Preferred Time:</label>
+          <div id="timeSlots" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0;">
+            <!-- Buttons will be injected by JS -->
+          </div>
+          <input type="hidden" name="time" id="selectedTime" required>        
+          <!-- Submit -->
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- Confirmation -->
+          <p id="bookingConfirmation" class="success-message">Booking request sent!</p>
+          <p id="oneOnOneSuccess" class="success-message">Thank you! Your request has been sent.</p>
+        </form>
+        
+      </div>
+    </div>
+
+    <!-- Circle Event Modal -->
+    <div id="modalCircle" class="modal">
+      <div class="modal-content">
+        <span class="close" data-close="modalCircle">&times;</span>
+        <h2>Join Circle Event</h2>
+        <p>Events are limited to 5 people.<br> Please check our event platform to book your spot.</p>
+        <a href="#" class="btn">Visit Booking Page</a> <!-- You can insert link later -->
+      </div>
+    </div>
+
+    <!-- Corporate Group Modal -->
+    <div id="modalCorporate" class="modal">
+      <div class="modal-content">
+        <span class="close" data-close="modalCorporate">&times;</span>
+        <h2>Request Corporate Group</h2>
+        <p>Please get in touch to plan a session for your team (up to 10 people).</p>
+        <form>
+          <input type="text" placeholder="Your Name" required><br>
+          <input type="text" placeholder="Company Name"><br>
+          <input type="email" placeholder="Your Email" required><br>
+          <input type="number" placeholder="Group Size"><br>
+          <textarea placeholder="Your Message or Preferred Time"></textarea><br>
+          <button type="submit" class="btn">Send Request</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- NUTRITION Section -->
+    <section id="nutrition" class="content_section">
+      <div class="text_left fade-in">
+        <h2>Nutrition</h2>
+        <p>Discover healing foods, herbal remedies, and plant wisdom through a blend of modern nutrition and traditional healing knowledge.</p>
+      </div>
+      <div class="image_right" style="background-image: url('images/nutrition-image.jpg');"></div>
+    </section>
+
+    <!--ACCESSORIES Section-->
+    <section id="shop" class="section shop-section">
+      <div class="container">
+        <h2>Accessories</h2>
+        <p>
+          Visit my external store to explore and purchase cushions, oils, and more:
+        </p>
+        <a href="https://sanzen.bigcartel.com" target="_blank" class="shop-button">Visit Shop</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Healing Practice</p>
+  </footer>
+
+<button id="scrollToTopBtn" title="Back to top">↑</button>
+<button id="scrollToTopBtn" title="Go to top">↑</button>
+
+<script src="script.js"></script>
+
+<!-- Flatpickr Styles & Script -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="booking-flatpickr.js"></script>
+</body>
+</html>
+>>>>>>> dad0ce32147e8b7a059cd8504e9099ad6e889835
