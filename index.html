@@ -3,194 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanzen</title>
+  <title>By Sanzen</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
-
+  <!-- Fonts: Playfair Display + Lato + Montserrat -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;700&family=Lato:wght@300;400;500;700&family=Montserrat:wght@300;400;500;700&family=ElegantCursive:wght@100;200;300&display=swap" />
 </head>
 <body>
   <div id="top"></div>
+
+  <!-- HEADER -->
   <header class="main_header">
     <div class="header_wrapper">
-      <h1 class="site_title">
-        <a href="#top" class="title_link">Sanzen</a>
-      </h1>
-      <nav> 
+      <!-- Branding -->
+      <div class="branding">
+        <h1 class="site_title"><a href="#top">Sanzen</a></h1>
+        <p class="site_subtitle">by Sandy Zenobia</p>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav>
         <ul class="nav_list">
-          <li><a href="#about" class="nav_link active">ABOUT</a></li>
-          <li><a href="#meditation" class="nav_link">MEDITATION</a></li>
-          <li><a href="#nutrition" class="nav_link">NUTRITION</a></li>
-          <li><a href="#shop" class="nav_link">SHOP</a></li> <!-- NEW SHOP LINK -->
+          <li><a href="about.html" class="nav_link">About</a></li>
+          <li><a href="services.html" class="nav_link">Services</a></li>
+      <!--<li><a href="shop.html" class="nav_link">Shop</a></li> -->
+          <li><a href="contact.html" class="nav_link">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Hamburger Button (mobile only) -->
+      <button class="hamburger" id="hamburger">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile_menu" id="mobileMenu">
+      <button class="close_btn" id="closeBtn">&times;</button>
+      <ul class="nav_list">
+        <li><a href="about.html" class="nav_link">About</a></li>
+        <li><a href="services.html" class="nav_link">Services</a></li>
+    <!--<li><a href="shop.html" class="nav_link">Shop</a></li> -->
+        <li><a href="contact.html" class="nav_link">Contact</a></li>
+      </ul>
     </div>
   </header>
 
   <main>
-    <!-- Welcome Section with Video -->
-    <section class="welcome_section">
-      <video autoplay muted loop class="welcome_video">
-        <source src="videos/your-welcome-video.mp4" type="video/mp4" />
+    <!-- HERO -->
+    <section id="hero" class="section hero-section">
+      <video autoplay muted loop playsinline>
+        <source src="videos/welcome-hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <img src="images/welcome-fallback.jpg" alt="Welcome background" />
+      
       <div class="video_overlay_text">
-        <h2>Welcome to Sanzen</h2>
-        <p>experience healing through meditation & nature</p>
+        <h1>a meditative path</h1>
+        <p>rediscover your truth and the harmony within you.</p>
       </div>
     </section>
+
+    <!-- VISION -->
+    <section id="vision" class="vision-section fade-in ">
+      <div class="vision-content">
+        <h3 class="vision-label">Vision</h3>
+        <h2>I Believe We Can Heal from Within, and Rooted in Nature, Find Harmony.</h2>
+        <p>— through holistic practices toward well-being & inner peace.</p>
+      </div> 
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section content-split fade-in">
+      <div class="text_left">
+        <h2>Guided by Sanzen</h2>
+        <h3>Together we explore <strong>presence</strong>, <strong>integrity</strong>, and <strong>inner harmony</strong> in <em>today’s world</em>.</h3>
+        <p>My role is to accompany you on a meditative journey — to <strong>rediscover yourself with compassion and clarity</strong>.
+           It is all about the space we create for you to <em>return to wholeness and rise.</em></p>
+        <a href="about.html" class="btn btn-secondary">Get to know me</a>
+      </div>
+      <div class="image_right face-intro"></div>
+    </section>
+
+    <div class="section-separator"></div>
     
-    <!-- VISION Section -->
-    <section id="vision" class="section vision-section">
-      <div class="text_center fade-in">
-      <!--div class="container"-->
-        <!--<h2>My Vision</h2>-->
-        <h4>I believe we can heal from within, and rooted in nature, find inner peace.</h4>
-        <h5>Through meditation and natural therapies<!-- and conscious nourishment-->, I guide you toward harmony and well-being.</h5>
-      </div>
-    </section>
-    
-
-    <!-- ABOUT Section -->
-    <section id="about" class="content_section">
-      <div class="text_left fade-in">
-        <h2>About</h2>
-        <p>I guide individuals through healing journeys with personalized meditation practices. Let’s cultivate peace and presence together.</p>
-      </div>
-      <div class="image_right" style="background-image: url('images/about-image.jpg');"></div>
-    </section>
-
-    <!-- MEDITATION Section -->
-    <section id="meditation" class="content_section">
-      <div class="image_left" style="background-image: url('images/meditation-image.jpg');"></div>
-      <div class="text_right fade-in">
-        <h2>Meditation</h2>
-        <p>Explore mindfulness, silence, and focus with tailored 1:1 sessions rooted in ancient wisdom and modern practice.</p>
-        <!-- OFFERINGS Section -->
-        <section id="offerings" class="content_section">
-          <div class="text_left fade-in">
-            <h2>Offerings</h2>
-            <p>Select your personalized meditation:</p>
-            <div class="offerings-container">
-              <button id="offeringsBtn" class="btn">View</button>
-              <div id="offeringsOptions" style="display: none; margin-top: 1rem;">
-                <ol><button class="btn" id="bookOneOnOneBtn">Book 1:1</button></ol>
-                <ol><button class="btn" id="bookCircleEventBtn">Join Circle Event</button></ol>
-                <ol><button class="btn" id="bookCorporateGroupBtn">Request for Corporate Group</button></ol>
-              </div>
-            </div>
-          </div>
-        </section>
+    <!-- SERVICES -->
+    <section id="services" class="section content-split fade-in">
+      <div class="image_right services-intro"></div>
+      <div class="text_right">
+        <h2>Served by Sanzen</h2>
+        <h3><em>Personalized Meditation</em> cultivating <strong>rest, release, clarity, and mindful presence</strong>— tailored to your essence.</h3>
+        <p><b>1:1 sessions exclusively</b> (group circles and corporate sessions available on request)</p>
+        <a href="services.html" class="btn btn-secondary">Explore Experiences</a>
       </div>
     </section>
 
-    <!-- 1:1 Booking Modal -->
-    <div id="modalOneOnOne" class="modal">
-      <div class="modal-content styled-modal">
-        <span class="close" data-close="modalOneOnOne">&times;</span>
-        <h2>Book 1:1</h2>
-        <p class="form-description">Please email or fill out the form to book your 1:1 session.</p>
-        <!--1:1 Form-->
-        <form id="oneOnOneForm" action="https://formspree.io/f/xeogabak" method="POST">
-          <!-- First name & surname side-by-side -->
-          <div style="display: flex; gap: 10px;">
-            <label style="flex: 1;">
-              First Name:
-              <input type="text" name="first-name" required>
-            </label>
-            <label style="flex: 1;">
-              Surname:
-              <input type="text" name="surname" required>
-            </label>
-          </div><br>
-          <!-- Birthday -->
-          <label for="birthday">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" required><br>
-          <!-- Email -->
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required><br>
-          <!-- Date picker -->
-          <label for="date">Preferred Date:</label>
-          <input type="date" id="date" name="date" required min="2025-05-05"><br>
-          <!-- Time slot selection -->
-          <label for="time">Preferred Time:</label>
-          <div id="timeSlots" style="display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0;">
-            <!-- Buttons will be injected by JS -->
-          </div>
-          <input type="hidden" name="time" id="selectedTime" required>        
-          <!-- Submit -->
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <!-- Confirmation -->
-          <p id="bookingConfirmation" class="success-message">Booking request sent!</p>
-          <p id="oneOnOneSuccess" class="success-message">Thank you! Your request has been sent.</p>
-        </form>
-        
-      </div>
-    </div>
+    <div class="section-separator"></div>
 
-    <!-- Circle Event Modal -->
-    <div id="modalCircle" class="modal">
-      <div class="modal-content">
-        <span class="close" data-close="modalCircle">&times;</span>
-        <h2>Join Circle Event</h2>
-        <p>Events are limited to 5 people.<br> Please check our event platform to book your spot.</p>
-        <a href="#" class="btn">Visit Booking Page</a> <!-- You can insert link later -->
+    <!-- MEET ME -->
+    <section id="meetme-preview" class="section content-centered fade-in">
+      <h2 class="section-title">Curious To Experience?</h2>
+      <div class="contact-buttons">
+        <a href="about.html" class="btn btn-secondary">Discover By Sanzen</a>
       </div>
-    </div>
-
-    <!-- Corporate Group Modal -->
-    <div id="modalCorporate" class="modal">
-      <div class="modal-content">
-        <span class="close" data-close="modalCorporate">&times;</span>
-        <h2>Request Corporate Group</h2>
-        <p>Please get in touch to plan a session for your team (up to 10 people).</p>
-        <form>
-          <input type="text" placeholder="Your Name" required><br>
-          <input type="text" placeholder="Company Name"><br>
-          <input type="email" placeholder="Your Email" required><br>
-          <input type="number" placeholder="Group Size"><br>
-          <textarea placeholder="Your Message or Preferred Time"></textarea><br>
-          <button type="submit" class="btn">Send Request</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- NUTRITION Section -->
-    <section id="nutrition" class="content_section">
-      <div class="text_left fade-in">
-        <h2>Nutrition</h2>
-        <p>Discover healing foods, herbal remedies, and plant wisdom through a blend of modern nutrition and traditional healing knowledge.</p>
-      </div>
-      <div class="image_right" style="background-image: url('images/nutrition-image.jpg');"></div>
     </section>
 
-    <!--ACCESSORIES Section-->
-    <section id="shop" class="section shop-section">
-      <div class="container">
-        <h2>Accessories</h2>
-        <p>
-          Visit my external store to explore and purchase cushions, oils, and more:
-        </p>
-        <a href="https://sanzen.bigcartel.com" target="_blank" class="shop-button">Visit Shop</a>
-      </div>
-    </section>
+    <!-- SHOP 
+    <section id="shop" class="section content-centered fade-in">
+      <h2>Shop</h2>
+      <p>Discover cushions, oils, and other holistic essentials for your practice.</p>
+      <a href="https://sanzen.bigcartel.com" target="_blank" class="btn btn-secondary">Visit Shop</a>
+    </section> -->
 
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 My Healing Practice</p>
+    <div class="footer-container  fade-in">
+
+      <!-- Branding -->
+      <div class="footer-branding  fade-in">
+        <h2>By Sanzen</h2>
+        <p>a meditative path</p>
+      </div>
+
+      <!-- Column 1 -->
+      <div class="footer-column  fade-in">
+        <h4>Path</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+      <!--<li><a href="shop.html">Shop</a></li> -->
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="footer-column  fade-in">
+        <h4>Experience</h4>
+        <ul>
+          <li><a href="services.html">1:1 Exclusive</a></li>
+          <li><a href="services.html">Circle Session</a></li>
+          <li><a href="services.html">Challenge</a></li>
+          <li><a href="services.html">Collaboration</a></li>
+        </ul>
+      </div>
+      <!-- Column 3 -->
+      <div class="footer-column  fade-in">
+        <h4>Social</h4>
+        <div class="footer-social">
+          <!-- Instagram -->
+          <a href="https://instagram.com/bysanzen" target="_blank" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-3a1.5 1.5 0 11-3.001.001A1.5 1.5 0 0116.5 6z"/>
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com/bysanzen" target="_blank" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M19.615 3.184A2.994 2.994 0 0021.5 5.35c.356 1.357.356 4.184.356 4.184s0 2.827-.356 4.184a2.994 2.994 0 01-1.885 2.166C18.27 16.167 12 16.167 12 16.167s-6.27 0-7.615-.283A2.994 2.994 0 012.5 13.718C2.144 12.36 2.144 9.533 2.144 9.533s0-2.827.356-4.184A2.994 2.994 0 014.385 3.184C5.73 2.9 12 2.9 12 2.9s6.27 0 7.615.284zM10 8.6v3.867l3.5-1.934L10 8.6z"/>
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/bysanzen" target="_blank" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4V8.5zm7.98 0h3.83v2.11h.05c.53-1 1.83-2.11 3.77-2.11 4.03 0 4.77 2.65 4.77 6.1V24h-4v-7.92c0-1.89-.03-4.31-2.63-4.31-2.63 0-3.03 2.05-3.03 4.17V24h-4V8.5z"/>
+            </svg>
+          </a>
+        </div>
+        <!-- optionally insert social feed links here -->
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact-preview" class="section fade-in">
+        <p class="contact-line">
+           Contact Me:<a href="mailto:info@bysanzen.com">info@bysanzen.com</a>
+        </p>
+        <div class="contact-buttons">
+            <a href="contact.html#inquiry" class="btn btn-primary">Write an Inquiry</a>
+            <a href="contact.html#call" class="btn btn-primary">Schedule a Consultation</a>
+        </div>
+    </div>
+
+    <!-- Bottom line -->
+    <div class="footer-content  fade-in">
+      <div class="footer-left">
+        <p>&copy; 2025, By Sanzen</p>
+      </div>
+      <div class="footer-center">
+        <p>
+          <a href="imprint.html">Imprint </a> ·
+          <a href="privacy.html"> Privacy</a>
+        </p>
+      </div>
+      <div class="footer-right">
+        <p>Webdesign & Development by Sandy Zenobia</p>
+      </div>
+    </div>
   </footer>
 
-<button id="scrollToTopBtn" title="Back to top">↑</button>
-<button id="scrollToTopBtn" title="Go to top">↑</button>
+  <!-- BACK TO TOP -->
+  <button id="scrollToTopBtn" title="Back to top">↑</button>
 
-<script src="script.js"></script>
+  <!-- Overlay for mobile menu -->
+  <div id="overlay"></div>
 
-<!-- Flatpickr Styles & Script -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="booking-flatpickr.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
+
