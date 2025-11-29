@@ -817,21 +817,33 @@ p {
     }
 
 }
+/* CSS: services section responsive background images */
+
 .services-intro {
-  background-image: url('images/meditation-image-portrait.jpg');      /* Default: mobile / portrait crop */
-  background-image: url('images/meditation-image-portrait.jpg');
+  background-image: url('images/meditation-image-portrait.jpg');  /* Default: mobile / portrait */
   background-size: cover;
-  background-position: center;                                         /* adjust if forehead needs more space */
+  background-position: center;
   min-height: 400px;
-  }
-  /* Desktop / wide screens: landscape crop */
-  @media (min-width: 1024px) {
-    .services-intro {
-      background-image: url('images/meditation-image-landscape.jpg');
-      background-size: cover;
-      background-position: center; /* can tweak to center face horizontally */
-    }
 }
+
+/* Laptop / medium screens: portrait / normal image */
+@media (min-width: 768px) and (max-width: 1365px) {
+  .services-intro {
+    background-image: url('images/meditation-image-portrait.jpg');  /* adjust filename as needed */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large desktop / wide screens: landscape crop */
+@media (min-width: 1366px) {
+  .services-intro {
+    background-image: url('images/meditation-image-landscape.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 
 .shop-intro {
   background-image: url('images/shop-intro.jpg');

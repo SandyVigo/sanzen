@@ -12,6 +12,7 @@
   <!-- Shared JS -->
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <div id="top"></div>
 
@@ -71,12 +72,12 @@
         Share your intention — I’ll reply within a few days.
       </p>
 
-      <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+      <form action="https://formspree.io/f/xeogabak" method="POST" class="contact-form" novalidate>
 
         <!-- DROPDOWN -->
         
         <div class="select-wrapper">
-          <select name="type" class="form-select" required>
+          <select name="type" class="form-select" >
             <option value="" disabled selected>Select an option</option>
             <option value="Consultation 1:1">Consultation 1:1</option>
             <option value="Inquiry">Inquiry</option>
@@ -90,7 +91,7 @@
           <input type="text" name="last-name" placeholder="LAST NAME" required />
         </div>
 
-        <input type="email" name="email" placeholder="E-MAIL" required />
+        <input type="text" name="email" placeholder="E-MAIL" />
 
         <textarea name="message" placeholder="Tell me a little about your intention.." required></textarea>
 
@@ -209,8 +210,6 @@
   <!-- Overlay for mobile menu -->
   <div id="overlay"></div>
 
-  <!-- JS -->
-  <script src="script.js"></script>
 </body>
 </html>
 

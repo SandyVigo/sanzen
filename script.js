@@ -102,4 +102,89 @@ document.addEventListener("DOMContentLoaded", () => {
     appearOnScroll.observe(fader);
   });
 
+  // ======================
+  // Contact form validation and submission
+  // ======================
+  const form = document.querySelector(".contact-form");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const emailField = form.querySelector('input[name="email"]');
+      const dropdown = form.querySelector('select[name="type"]');
+      const messageText = form.querySelector('textarea[name="message"]');
+
+      // Remove ANY old errors OR success messages
+      form.querySelectorAll(".input-error, .input-success").forEach(el => el.remove());
+
+      // --- Show inline error ---
+      const showError = (field, message) => {
+        const error = document.createElement("span");
+        error.className = "input-error";
+        error.textContent = message;
+        error.style.color = "red";
+        error.style.fontSize = "0.9em";
+        error.style.display = "block";
+        error.style.marginTop = "4px";
+        field.insertAdjacentElement("afterend", error);
+
+        // Highlight + scroll
+        field.style.borderColor = "red";
+        field.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => { field.style.borderColor = ""; }, 4000);
+      };
+
+      // --- VALIDATION ---
+      if (!dropdown.value) {
+        showError(dropdown, "Please select an option.");
+        return;
+      }
+
+      if (!emailField.value || !/^\S+@\S+\.\S+$/.test(emailField.value)) {
+        showError(emailField, "Please enter a valid email address (e.g., you@example.com).");
+        return;
+      }
+
+      if (!messageText.value.trim()) {
+        showError(messageText, "Please enter a message.");
+        return;
+      }
+
+      // --- SUBMIT FORM ---
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (response.ok) {
+          const success = document.createElement("span");
+          success.className = "input-success";
+          success.textContent = "Thanks! Your inquiry has been sent.";
+          success.style.color = "green";
+          success.style.display = "block";
+          success.style.marginTop = "10px";
+
+          form.appendChild(success);
+          form.reset();
+
+          // Remove after 5 seconds
+          setTimeout(() => success.remove(), 5000);
+
+        } else {
+          alert("Oops! There was a problem sending your message.");
+        }
+      } catch (err) {
+        alert("Network error. Please try again later.");
+      }
+
+    });
+  }
+
+
+
 });
