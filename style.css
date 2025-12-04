@@ -1079,14 +1079,15 @@ p {
   margin: 2rem 0; /* space above and below */
 }
 
+
 /* ===========================
    PROCEDURE / TIMELINE
 =========================== */
-
 .procedure-section {
-  background: var(--color-offwhite, #fdfaf6);
-  padding: 80px 0;
-  width: 100%;
+  width: 100%;                              /* full width like vision */
+  background-color: white; /* off-white */
+  padding: 6rem 2rem;                       /* generous top/bottom spacing */
+  box-sizing: border-box;                    /* include padding in width */
 }
 
 /* ============================================
@@ -1098,9 +1099,9 @@ p {
   gap: 40px;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
   align-items: start;
-  background-color: var(--color-offwhite);
+  padding: 0;        /* remove extra padding from container */
+  background: transparent; /* let section background show fully */
 }
 
 /* Title */
@@ -1148,7 +1149,7 @@ p {
   height: 40px;
   border-radius: 50%;
   border: 1.6px solid #333;
-  background: var(--color-offwhite, #fdfaf6);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1156,7 +1157,7 @@ p {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   z-index: 3;
-  box-shadow: 0 0 0 6px var(--color-offwhite, #fdfaf6);
+  box-shadow: 0 0 0 6px white;
 }
 
 /* Step text */
