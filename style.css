@@ -297,6 +297,7 @@ p {
 .section {
   padding: 100px 10%;
   text-align: center;
+  width: 100%;
 }
 
 .content-split {
@@ -345,7 +346,7 @@ p {
 .section-separator {
   border-top: 2px solid rgb(255, 255, 255); /* subtle white line for off-white background */
   margin: 2rem 0; /* space above and below */
-}
+ }
 
 /* ======================
    VISION SECTION
@@ -1066,6 +1067,90 @@ p {
   display: block;       /* forces new line below text */
   margin-top: 1rem;     /* spacing above button */
   width: fit-content;   /* keeps button size to content */
+}
+
+/* ======================
+  SEPARATOR
+====================== */
+
+/* CONTACT PAGE — SPECIAL SEPARATOR */
+.contact-separator {
+  border-top: 2px solid rgb(255, 255, 255); /* subtle white line for off-white background */
+  margin: 2rem 0; /* space above and below */
+}
+
+/* ======================
+  PROCEDURE / ONBOARDING
+====================== */
+/* Procedure timeline */
+.procedure-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #222;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin-left: 60px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 2px;
+  height: 100%;
+  background: #ccc;
+}
+
+/* Timeline item */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Number circles */
+.timeline-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  position: absolute;
+  left: -10px;
+  top: 0;
+}
+
+/* Content */
+.timeline-content {
+  margin-left: 60px;
+}
+
+.timeline-content h3 {
+  margin: 0 0 5px 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #111;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Lato', sans-serif;
 }
 
 
