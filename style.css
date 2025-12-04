@@ -1082,68 +1082,82 @@ p {
 /* ======================
   PROCEDURE / ONBOARDING
 ====================== */
-/* Procedure timeline */
+
+/* Timeline Section */
 .procedure-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: 1.5 rem;
   margin-bottom: 40px;
   text-align: left;
-  color: #222;
+  color: var(--color-purple);
 }
 
+/* Timeline container */
 /* Timeline container */
 .timeline {
   position: relative;
   margin-left: 60px;
+  padding-left: 20px; /* space for the line */
 }
 
-/* Vertical line */
+/* Vertical line (thin, subtle) */
 .timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 20px;
-  width: 2px;
+  left: 0; /* line at left of the timeline */
+  width: 1px; /* thin line */
   height: 100%;
-  background: #ccc;
+  background: #ccc; /* subtle gray, not blue */
 }
 
 /* Timeline item */
 .timeline-item {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   position: relative;
 }
 
-/* Number circles */
+/* Moon-like number circles */
 .timeline-number {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: white;
-  border: 2px solid #333;
+  background: none;
+  border: 1.5px solid #333; /* thin circle */
+  border-left-color: transparent; /* open moon effect */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 500;
   color: #333;
   font-family: 'Lato', sans-serif;
   position: absolute;
-  left: -10px;
+  left: -16px; /* adjust to line */
   top: 0;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect */
+.timeline-number:hover {
+  border-color: #6a11cb; /* subtle accent */
+  color: #6a11cb;
+  transform: scale(1.1);
 }
 
 /* Content */
 .timeline-content {
-  margin-left: 60px;
+  margin-left: 50px;
 }
 
 .timeline-content h3 {
-  margin: 0 0 5px 0;
+  margin: 0 0 8px 0;
   font-family: 'Lato', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   color: #111;
+  font-size: 1.1rem;
 }
 
 .timeline-content p {
@@ -1152,7 +1166,6 @@ p {
   line-height: 1.6;
   font-family: 'Lato', sans-serif;
 }
-
 
 /* ======================
    FOOTER
