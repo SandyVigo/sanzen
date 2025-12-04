@@ -1079,80 +1079,149 @@ p {
   margin: 2rem 0; /* space above and below */
 }
 
-/* ======================
-  PROCEDURE / ONBOARDING
-====================== */
-/* Procedure timeline */
+/* ===========================
+   PROCEDURE / TIMELINE
+=========================== */
+
+.procedure-section {
+  background: var(--color-offwhite, #fdfaf6);
+  padding: 80px 0;
+  width: 100%;
+}
+
+/* ============================================
+   CONTAINER LAYOUT
+============================================ */
+.procedure-container {
+  display: grid;
+  grid-template-columns: 320px 120px 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: start;
+  background-color: var(--color-offwhite);
+}
+
+/* Title */
 .procedure-title {
+  grid-column: 1 / 2;
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  text-align: left;
-  color: #222;
+  font-size: 4rem;
+  line-height: 0.95;
+  margin: 2.5rem;
+  color:var(--color-purple);
 }
 
-/* Timeline container */
-.timeline {
+/* Steps wrapper */
+.steps {
+  grid-column: 2 / 4;
   position: relative;
-  margin-left: 60px;
+  padding-top: 20px;
 }
 
-/* Vertical line */
-.timeline::before {
-  content: '';
+/* Vertical timeline line */
+.steps::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 20px;
+  top: 40px;
+  bottom: 80px;
+  left: 60px;
   width: 2px;
-  height: 100%;
-  background: #ccc;
+  background: #dcd9d4;
+  z-index: 1;
 }
 
-/* Timeline item */
-.timeline-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 40px;
+/* Step block */
+.step {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 28px 0;
   position: relative;
 }
 
-/* Number circles */
-.timeline-number {
+/* Step number circle */
+.step-number {
+  justify-self: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
-  border: 2px solid #333;
+  border: 1.6px solid #333;
+  background: var(--color-offwhite, #fdfaf6);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  color: #333;
+  font-size: 0.9rem;
   font-family: 'Lato', sans-serif;
-  position: absolute;
-  left: -10px;
-  top: 0;
+  font-weight: 400;
+  z-index: 3;
+  box-shadow: 0 0 0 6px var(--color-offwhite, #fdfaf6);
 }
 
-/* Content */
-.timeline-content {
-  margin-left: 60px;
-}
-
-.timeline-content h3 {
-  margin: 0 0 5px 0;
+/* Step text */
+.step-body h3 {
+  margin: 0 0 10px;
   font-family: 'Lato', sans-serif;
+  font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: 0.5px;
   color: #111;
 }
 
-.timeline-content p {
+.step-body p {
   margin: 0;
-  color: #555;
-  line-height: 1.6;
   font-family: 'Lato', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 620px;
 }
 
+/* ============================================
+   Responsive
+============================================ */
+@media (max-width: 1000px) {
+  .procedure-container {
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 24px;
+  }
+
+  .procedure-title { font-size: 3rem; }
+
+  .steps::before { left: 40px; }
+
+  .step {
+    grid-template-columns: 80px 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .procedure-container {
+    grid-template-columns: 1fr;
+  }
+
+  .procedure-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .steps::before {
+    top: 24px;       /* fits cleanly above/below numbers */
+    bottom: 24px;
+    left: 22px;
+  }
+
+  .step {
+    grid-template-columns: 48px 1fr;
+    padding: 18px 0;
+  }
+
+  .step-number {
+    width: 34px;
+    height: 34px;
+  }
+}
 
 /* ======================
    FOOTER
